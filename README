@@ -1,0 +1,22 @@
+Reverse Polish Notation Calculator
+
+Available commands:
+ Arithmetic: + , - , * , /
+ Logarithms and Exponents: ^ , loge, log10
+ Trigonometry: sin, cos, tan, csc, sec, cot
+ Misc: !
+
+Calculator:
+ q - quit
+ v - view the entire stack
+ b - burn/clear the stack (removes all stored values)
+ p - pop/remove the highest item in the stack
+ h - view this help page
+
+How to use:
+This calculator is based on the Postfix notation. The operands are written first followed by the operator
+Eg. a + b  ->  a b +
+
+To use the calculator, type out the operands first and hit Enter one by one to store them in the stack
+Call the operator by typing it after the operands have been entered
+For the above case, first enter 'a' followed by 'b' and then '+'
