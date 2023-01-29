@@ -22,5 +22,8 @@ double _cot(double a);
 
 // Misc
 double factorial(double a);
+double absolute(double a);
+double _floor(double a);
+double _ceil(double a);
 
 #endif

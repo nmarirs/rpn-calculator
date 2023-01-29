@@ -6,6 +6,8 @@
 /*
     a is higher on stack than b
 */
+
+// Arithmetic
 double add(double a, double b)
 {
     return b + a;
@@ -26,6 +28,7 @@ double divide(double a, double b)
     return a / b;
 }
 
+// log and exponents
 double exponent(double a, double b)
 {
     return pow(a, b);
@@ -42,6 +45,7 @@ double loge(double a)
 }
 
 // are these really necessary?
+// trig
 double _sin(double a)
 {
     return sin(a);
@@ -72,6 +76,7 @@ double _cot(double a)
     return 1/tan(a);
 }
 
+// misc
 double factorial(double a)
 {
     double result = 1;
