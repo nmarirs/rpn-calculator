@@ -25,12 +25,13 @@ int main()
     char token[30];
     Stack* value_stack = malloc(sizeof(Stack));
     stack_init(15, value_stack);
+    meminit();
 
     while (1)
     {
         printf("> ");
         scanf("%s", token);   
-
+        
         // quit
         if (token[0] == 'q')
         {
@@ -151,6 +152,21 @@ int main()
             else if (strcmp(token, "!") == 0)
             {
                 result = factorial(stack_pop(value_stack));
+            }
+            else if (strcmp(token, "M") == 0)
+            {
+                skip = 1;
+                double val = stack_pop(value_stack);
+                printf("Memory: %f (store)\n", memstore(val));
+            }
+            else if (strcmp(token, "M+") == 0)
+            {
+                skip = 1;
+                printf("Memory: %f (add)\n", memadd(stack_pop(value_stack)));
+            }
+            else if (strcmp(token, "ML") == 0)
+            {
+                result = memload();
             }
             else
             {

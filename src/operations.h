@@ -26,4 +26,13 @@ double absolute(double a);
 double _floor(double a);
 double _ceil(double a);
 
+// Memory
+
+//double* calc_memory;
+
+double* meminit();
+double memstore(double a);
+double memadd(double a);
+double memload();
+
 #endif

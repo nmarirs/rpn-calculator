@@ -1,4 +1,5 @@
 #include <math.h>
+#include <stdlib.h>
 #include <stdio.h>
 
 #include "operations.h"
@@ -91,4 +92,43 @@ double factorial(double a)
         a -= 1;
     }
     return result;
+}
+
+double absolute(double a)
+{
+    ;
+}
+
+double _floor(double a)
+{
+    return (double)(int)a;
+}
+
+double _ceil(double a)
+{
+    return _floor(a) + 1;
+}
+
+double* calc_memory = NULL;
+// memory
+double* meminit()
+{
+    calc_memory = malloc(sizeof(double));
+}
+
+double memstore(double a)
+{
+    *calc_memory = a;
+    return *calc_memory;
+}
+
+double memadd(double a)
+{
+    *calc_memory += a;
+    return *calc_memory;
+}
+
+double memload()
+{
+    return *calc_memory;
 }
