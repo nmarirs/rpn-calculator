@@ -4,7 +4,8 @@ Available commands:
  Arithmetic: + , - , * , /
  Logarithms and Exponents: ^ , loge, log10
  Trigonometry: sin, cos, tan, csc, sec, cot
- Misc: !
+ Misc: ! , abs, floor, ceil
+ Memory: M, M+, ML
 
 Calculator:
  q - quit

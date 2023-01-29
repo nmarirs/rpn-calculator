@@ -96,17 +96,17 @@ double factorial(double a)
 
 double absolute(double a)
 {
-    ;
+    return fabs(a);
 }
 
 double _floor(double a)
 {
-    return (double)(int)a;
+    return floor(a);
 }
 
 double _ceil(double a)
 {
-    return _floor(a) + 1;
+    return ceil(a) + 1;
 }
 
 double* calc_memory = NULL;

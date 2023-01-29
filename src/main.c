@@ -11,7 +11,7 @@ int isnum(char string[])
 {
     for (char c = *string; c != '\0'; c = *++string)
     {
-        if (!isdigit(c) && c != '.')
+        if (!isdigit(c) && c != '.' && c!= '-')
         {
             return 0;
         }
@@ -45,7 +45,8 @@ int main()
             " Arithmetic: + , - , * , /\n"
             " Logarithms and Exponents: ^ , loge, log10\n"
             " Trigonometry: sin, cos, tan, csc, sec, cot\n"
-            " Misc: !\n"
+            " Misc: ! , abs, floor, ceil\n"
+            " Memory: M, M+, ML\n"
             "\n"
             "Calculator:\n"
             " q - quit\n"
@@ -152,6 +153,18 @@ int main()
             else if (strcmp(token, "!") == 0)
             {
                 result = factorial(stack_pop(value_stack));
+            }
+            else if (strcmp(token, "abs") == 0)
+            {
+                result = absolute(stack_pop(value_stack));
+            }
+            else if (strcmp(token, "floor") == 0)
+            {
+                result = _floor(stack_pop(value_stack));
+            }
+            else if (strcmp(token, "ceil") == 0)
+            {
+                result = _ceil(stack_pop(value_stack));
             }
             else if (strcmp(token, "M") == 0)
             {
