@@ -7,6 +7,8 @@ int stack_init(int max, Stack *stk)
 {
     stk->maxsize = max;
     stk->size = 0;
+    stk->top = NULL;
+    return 0;
 }
 
 int stack_push(double value, Stack* stk)
@@ -14,7 +16,7 @@ int stack_push(double value, Stack* stk)
     Node* new = malloc(sizeof(Node));
     if (stk->maxsize == stk->size)
     {
-        printf("Stack Overflow on %p\n", stk);
+        printf("Stack Overflow on %p. Exceeded max stack size of %d\n", stk, stk->maxsize);
         free(new);
         return -1;
     }
@@ -59,7 +61,7 @@ int stack_burn(Stack* stk)
         head = head->next;
         free(tmp);
     }
-    stk->size = 0;
+    stack_init(stk->maxsize, stk);
     return 0;
 }
 
@@ -67,10 +69,15 @@ double stack_view(Stack* stk)
 {
     Node* head = stk->top;
     int level = stk->size;
+    if (head == NULL)
+    {
+        printf("No items in the stack\n");
+    }
     while (head != NULL)
     {
         printf("[%2d] -> %f\n", level, head->value);
         head = head->next;
         level -= 1;
     }
+    return 0;
 }

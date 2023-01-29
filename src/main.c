@@ -82,7 +82,14 @@ int main()
         else if (isnum(token))
         {
             int size = stack_push((double)atof(token), value_stack);
-            printf("Pushed [%d] %f (store)\n", size, atof(token));
+            if (size >= 0)
+            {
+                printf("Pushed [%d] %f (store)\n", size, atof(token));
+            }
+            else
+            {
+                printf("Consider popping 'p' or burning 'p' the stack\n");
+            }
         }
         // operate
         else 
