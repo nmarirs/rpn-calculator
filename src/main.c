@@ -9,15 +9,30 @@
 
 int isnum(char string[])
 {
+    int d = 0;
     for (char c = *string; c != '\0'; c = *++string)
     {
-        if (!isdigit(c) && c != '.' && c!= '-')
+        d++;
+        if (!isdigit(c) && c != '.' && c != '-')
         {
             return 0;
         }
+        if (d == 1 && c == '-')
+        {
+            d = 0;
+        }
     }
-    return 1;
+
+    if (d > 0)
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
 }
+
 
 int main()
 {
@@ -31,7 +46,10 @@ int main()
     {
         printf("> ");
         scanf("%s", token);   
-        
+        if (!token) 
+        {
+            continue;
+        }
         // quit
         if (token[0] == 'q')
         {
